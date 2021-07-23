@@ -2,4 +2,15 @@
     <string name="app_name">HomeWork</string>
     <string name="tv_text">Рандомное число из отрезка [5;155]</string>
     <string name="btn_check">Сгенерировать число</string>
+    <string name="catAdd">Данные вашего кота</string>
+    <string name="catName">Имя</string>
+    <string name="catColor">Окрас</string>
+    <string name="catWeight">Вес</string>
+    <string name="Length">Длина</string>
+    <string name="Height">Высота</string>
+    <string name="tableAdd">Данные стола</string>
+    <string name="Material">Материал</string>
+    <string name="tableColor">Цвет</string>
+    <string name="tableLegs">Кол-во ножек</string>
+    <string name="btnCheck">Запрыгнет ли кот на стол?</string>
 </resources>

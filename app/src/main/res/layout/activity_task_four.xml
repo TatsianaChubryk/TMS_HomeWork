@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaskFourActivity">
+
+    <TextView
+        android:id="@+id/tv_catAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/catAdd"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_catName"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        android:hint="@string/catName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_catAdd"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_catColor"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="23dp"
+        android:hint="@string/catColor"
+        app:layout_constraintStart_toEndOf="@+id/et_catName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_catAdd"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_catWeight"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="33dp"
+        android:hint="@string/catWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_catName"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_catLength"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="33dp"
+        android:hint="@string/Length"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/et_catWeight"
+        app:layout_constraintTop_toBottomOf="@+id/et_catColor"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_catHeight"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/Height"
+        app:layout_constraintStart_toEndOf="@+id/et_catLength"
+        app:layout_constraintTop_toBottomOf="@+id/et_catColor"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_TableAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/tableAdd"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_catLength" />
+
+    <EditText
+        android:id="@+id/et_tableHeight"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/Height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_TableAdd"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_tableLength"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="156dp"
+        android:hint="@string/Length"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/et_tableHeight"
+        app:layout_constraintTop_toBottomOf="@+id/tv_TableAdd"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_tableMaterial"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+       android:hint="@string/Material"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_tableLength"
+        app:layout_constraintTop_toBottomOf="@+id/tv_TableAdd"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_tableColor"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="28dp"
+        android:hint="@string/tableColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_tableHeight"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_tableLegs"
+        android:layout_width="150dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="48dp"
+        android:hint="@string/tableLegs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/et_tableColor"
+        app:layout_constraintTop_toBottomOf="@+id/et_tableLength"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_checkJump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/btnCheck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_tableLegs"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_resultJump"
+        android:layout_width="293dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_checkJump"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
