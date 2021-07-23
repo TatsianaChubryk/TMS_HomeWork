@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">HomeWork</string>
+    <string name="app_name">HomeWork16</string>
+    <string name="btn_taskOne">Task 1</string>
+    <string name="btn_taskTwo">Task 2</string>
+    <string name="btn_taskThree">Task 3</string>
+    <string name="btn_result">=</string>
 </resources>

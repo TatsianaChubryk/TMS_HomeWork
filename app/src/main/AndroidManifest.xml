@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeWork">
+        <activity android:name=".TaskThreeActivity"></activity>
+        <activity android:name=".TaskTwoActivity" />
+        <activity android:name=".TaskOneActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
