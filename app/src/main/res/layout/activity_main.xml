@@ -38,4 +38,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_taskTwo"
         tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/btn_taskFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/btn_taskFour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_taskThree"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+    android:id="@+id/btn_taskFive"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="152dp"
+    android:layout_marginTop="28dp"
+    android:text="@string/btn_taskFive"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btn_taskFour"
+    tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_taskSix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/btn_taskSix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_taskFive"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

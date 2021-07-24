@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".TaskThreeActivity">
 
+    <EditText
+        android:id="@+id/et_rating"
+        android:layout_width="149dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="144dp"
+        android:ems="10"
+        android:hint="@string/et_rating"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_rating"
+        android:layout_width="178dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="140dp"
+        android:text="@string/btn_rating"
+        app:layout_constraintStart_toEndOf="@+id/et_rating"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="224dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="48dp"
+        android:text=""
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_rating"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
