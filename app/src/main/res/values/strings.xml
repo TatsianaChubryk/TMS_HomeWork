@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">HomeWork</string>
+    <string name="app_name">HomeWork16</string>
+    <string name="btn_taskOne">Task 1</string>
+    <string name="btn_taskTwo">Task 2</string>
+    <string name="btn_taskThree">Task 3</string>
+    <string name="btn_taskFour">Task 4</string>
+    <string name="btn_taskFive">Task 5</string>
+    <string name="btn_taskSix">Task 6</string>
+    <string name="btn_result">=</string>
+    <string name="et_rating">Введите рейтинг</string>
+    <string name="btn_rating">Узнать рейтинг</string>
+    <string name="tv_envelopFirst">Первый конверт</string>
+    <string name="tv_envelopSecond">Второй конверт</string>
+    <string name="ed_a">Сторона "а"</string>
+    <string name="ed_b">Сторона "b"</string>
+    <string name="ed_c">Сторона "c"</string>
+    <string name="ed_d">Сторона "d"</string>
+    <string name="btn_check">Можно ли вложить один конверт в другой?</string>
+    <string name="et_number">Введите число</string>
+    <string name="btn_res">Вычислить факториал</string>
 </resources>
