@@ -6,13 +6,319 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/layoutSpinner"
+        android:layout_width="413dp"
+        android:layout_height="225dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tvSelectDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/tvSelectDistrict" />
+
+        <Spinner
+            android:id="@+id/spinnerDistrict"
+            android:layout_width="266dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvSelectVegetables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/tvSelectVegetables" />
+
+        <Spinner
+            android:id="@+id/spinnerVegetable"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerDistrict"
+            tools:ignore="MissingConstraints" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutDistrict"
+        android:layout_width="412dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layoutSpinner"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tvBrest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/tvBrest"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPotatoBrest"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/Potato"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvCabbageBrest"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="34dp"
+            android:text="@string/Cabbage"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvBeetBrest"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="64dp"
+            android:text="@string/Beet"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvGrodno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="111dp"
+            android:text="@string/tvGrodno"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPotatoGrodno"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="110dp"
+            android:text="@string/Potato"
+
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvCabbageGrodno"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="145dp"
+            android:text="@string/Cabbage"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvBeetGrodno"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="180dp"
+            android:text="@string/Beet"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvMinsk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="136dp"
+            android:text="@string/tvMinsk"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPotatoMinsk"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="236dp"
+            android:text="@string/Potato"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultPotatoMinsk"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="236dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultPotatoBrest"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultCabbageBrest"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultBeetBrest"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="67dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultPotatoGrodno"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultCabbageGrodno"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="145dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultBeetGrodno"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultBeetMinsk"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="312dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvResultCabbageMinsk"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="275dp"
+            android:layout_marginEnd="62dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvCabbageMinsk"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="275dp"
+            android:text="@string/Cabbage"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvBeetMinsk"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="312dp"
+            android:text="@string/Beet"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="232dp"
+        android:text="@string/btnResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layoutSpinner"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

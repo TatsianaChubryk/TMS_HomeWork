@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">HomeWork</string>
+    <string name="app_name">Голодные игры</string>
+    <string name="tvBrest">Брестская</string>
+    <string name="tvGrodno">Гроднеская</string>
+    <string name="tvMinsk">Минская</string>
+    <string name="tvDistrict">Области, участвующие в состязании</string>
+    <string name="Potato">Картофель</string>
+    <string name="Cabbage">Капуста</string>
+    <string name="Beet">Cвекла</string>
+    <string name="btnResult">Записать результат</string>
+    <string name="tvSelectDistrict">Выберете область</string>
+    <string name="tvSelectVegetables">Выберете овощ</string>
 </resources>
