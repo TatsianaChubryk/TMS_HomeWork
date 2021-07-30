@@ -18,17 +18,17 @@
             android:id="@+id/tvSelectDistrict"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginTop="1dp"
+            android:text="@string/tvSelectDistrict"
             android:textAlignment="center"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"
-            android:text="@string/tvSelectDistrict" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spinnerDistrict"
             android:layout_width="266dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +44,14 @@
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="16sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="@string/tvSelectVegetables" />
 
         <Spinner
             android:id="@+id/spinnerVegetable"
             android:layout_width="263dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +59,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerDistrict"
             tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/etAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/etAmount"
+            android:layout_marginTop="3dp"
+            android:inputType="textPersonName" />
 
 
     </LinearLayout>
@@ -311,10 +319,10 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btnResult"
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="240dp"
         android:text="@string/btnResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

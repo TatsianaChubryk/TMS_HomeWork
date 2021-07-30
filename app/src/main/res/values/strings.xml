@@ -10,4 +10,5 @@
     <string name="btnResult">Записать результат</string>
     <string name="tvSelectDistrict">Выберете область</string>
     <string name="tvSelectVegetables">Выберете овощ</string>
+    <string name="etAmount">Введите значение в кг</string>
 </resources>
