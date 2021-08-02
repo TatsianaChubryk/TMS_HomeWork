@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvResultBeetBrest: TextView
     private lateinit var tvDistrict: TextView
     private lateinit var tvVegetables: TextView
+    var positionDistrict: Int? = null
 
     var district = listOf("Бресткая область", "Гродненская область", "Минская область")
     var vegetables = listOf("Картофель", "Капуста", "Свекла")
@@ -25,27 +26,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView()
         initAdapter()
-        addResult()
+        addResult(positionDistrict)
     }
 
-    private fun addResult() {
+    private fun addResult(positionDistrict: Int?, position2: Int? = null) {
         btnAdd.setOnClickListener {
-            val amount = etAmount.text.toString().toLong()
+
+
+
+            /*val amount = etAmount.text.toString().toLong()
             val resPotatoBrest = tvResultPotatoBrest.text.toString().toLong()
             val res = amount + resPotatoBrest
-            tvResultPotatoBrest.text = res.toString()
+            tvResultPotatoBrest.text = res.toString()*/
            }
     }
 
     private fun initAdapter() {
+        //определяю что я выбрала в выпадающем списке
         val adapterDistrict = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, district)
         adapterDistrict.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerDistrict.adapter = adapterDistrict;
         spinnerDistrict.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                //Toast.makeText(this@MainActivity, "Selected $position", Toast.LENGTH_LONG).show()
-                val district = parent!!.getItemAtPosition(position).toString()
-                tvDistrict.text = district
+                //val district = parent!!.getItemAtPosition(position)
+                //tvDistrict.text = district
+               // addResult(positionDistrict = position)
+                positionDistrict = position
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
