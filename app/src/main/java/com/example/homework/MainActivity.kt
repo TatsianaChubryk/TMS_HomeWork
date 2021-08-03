@@ -1,11 +1,14 @@
 package com.example.homework
 
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 /*
 В Беларуси начинается сбор урожая. Картофель, капуста, свекла (долгунец?). Области борются за первенство.
@@ -38,16 +41,20 @@ class MainActivity : AppCompatActivity() {
     var district = listOf("Бресткая область", "Гродненская область", "Минская область")
     var vegetables = listOf("Картофель", "Капуста", "Свекла")
 
+    private val job = SupervisorJob()
+    private val coroutine = CoroutineScope(job + Dispatchers.Main)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         initView()
         initAdapter()
-        addResult(positionDistrict, positionVegetables)
+
    }
 
-    private fun addResult(positionVegetables: Int?, positionDistrict: Int?) {
-        btnAdd.setOnClickListener {
+    private suspend fun addResult(positionVegetables: Int?, positionDistrict: Int?) {
             val amount = etAmount.text.toString().toInt()
             val potatoBrest = tvResultPotatoBrest.text.toString().toInt()
             val beetBrest = tvResultBeetBrest.text.toString().toInt()
@@ -74,7 +81,6 @@ class MainActivity : AppCompatActivity() {
                 potatoGrodno >= 100 && cabbageGrodno >= 100 && beetGrodno >= 100 -> Toast.makeText(getBaseContext(), "Победитель Гродненская область", Toast.LENGTH_LONG).show()
                 potatoMinsk >= 100 && cabbageMinsk >= 100 && beetMinsk >= 100 -> Toast.makeText(getBaseContext(), "Победитель Минская область", Toast.LENGTH_LONG).show()
             }
-       }
     }
 
    private fun initAdapter() {
@@ -117,5 +123,13 @@ class MainActivity : AppCompatActivity() {
         tvResultPotatoMinsk = findViewById(R.id.tvResultPotatoMinsk)
         tvResultCabbageMinsk = findViewById(R.id.tvResultCabbageMinsk)
         tvResultBeetMinsk = findViewById(R.id.tvResultBeetMinsk)
+        btnAdd.setOnClickListener {
+            coroutine.launch {
+                delay(3000)
+                addResult(positionDistrict, positionVegetables)
+
+            }
+
+        }
     }
 }
