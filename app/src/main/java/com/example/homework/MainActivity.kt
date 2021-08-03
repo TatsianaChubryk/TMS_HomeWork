@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvResultBeetMinsk: TextView
     var positionDistrict: Int? = null
     var positionVegetables: Int? = null
-   // private var potatoBrest = tvResultPotatoBrest.text.toString().toInt()
 
     var district = listOf("Бресткая область", "Гродненская область", "Минская область")
     var vegetables = listOf("Картофель", "Капуста", "Свекла")
@@ -45,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         initView()
         initAdapter()
         addResult(positionDistrict, positionVegetables)
-        winner()
-    }
+   }
 
     private fun addResult(positionVegetables: Int?, positionDistrict: Int?) {
         btnAdd.setOnClickListener {
@@ -72,20 +70,14 @@ class MainActivity : AppCompatActivity() {
                 this.positionDistrict == 2 && this.positionVegetables == 2 -> tvResultBeetMinsk.text = (amount + beetMinsk).toString()
             }
             when{
-                potatoBrest >= 100 && cabbageBrest >= 100 && beetBrest >= 100 -> Toast.makeText(getBaseContext(), "Победитель БРЕСТСКАЯ область", Toast.LENGTH_LONG).show();
-                potatoGrodno >= 100 && cabbageGrodno >= 100 && beetGrodno >= 100 -> Toast.makeText(getBaseContext(), "Победитель ГРОДНЕНСКАЯ область", Toast.LENGTH_LONG).show();
-                potatoMinsk >= 100 && cabbageMinsk >= 100 && beetMinsk >= 100 -> Toast.makeText(getBaseContext(), "Победитель МИНСКАЯ область", Toast.LENGTH_LONG).show();
+                potatoBrest >= 100 && cabbageBrest >= 100 && beetBrest >= 100 -> Toast.makeText(getBaseContext(), "Победитель Брестская область", Toast.LENGTH_LONG).show()
+                potatoGrodno >= 100 && cabbageGrodno >= 100 && beetGrodno >= 100 -> Toast.makeText(getBaseContext(), "Победитель Гродненская область", Toast.LENGTH_LONG).show()
+                potatoMinsk >= 100 && cabbageMinsk >= 100 && beetMinsk >= 100 -> Toast.makeText(getBaseContext(), "Победитель Минская область", Toast.LENGTH_LONG).show()
             }
-        }
+       }
     }
 
-    private fun winner(){
-      /*  when{
-            potatoBrest == 100 -> Toast.makeText(getBaseContext(), "Победитель" + district, Toast.LENGTH_SHORT).show();
-        }*/
-    }
-
-    private fun initAdapter() {
+   private fun initAdapter() {
         val adapterDistrict = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, district)
         adapterDistrict.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerDistrict.adapter = adapterDistrict;
