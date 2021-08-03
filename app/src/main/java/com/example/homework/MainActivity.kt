@@ -14,11 +14,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvResultPotatoBrest: TextView
     private lateinit var tvResultCabbageBrest: TextView
     private lateinit var tvResultBeetBrest: TextView
-    private lateinit var tvDistrict: TextView
-    private lateinit var tvVegetables: TextView
+    private lateinit var tvResultPotatoGrodno: TextView
+    private lateinit var tvResultCabbageGrodno: TextView
+    private lateinit var tvResultBeetGrodno: TextView
+    private lateinit var tvResultPotatoMinsk: TextView
+    private lateinit var tvResultCabbageMinsk: TextView
+    private lateinit var tvResultBeetMinsk: TextView
     var positionDistrict: Int? = null
     var positionVegetables: Int? = null
-
 
     var district = listOf("Бресткая область", "Гродненская область", "Минская область")
     var vegetables = listOf("Картофель", "Капуста", "Свекла")
@@ -31,44 +34,40 @@ class MainActivity : AppCompatActivity() {
         addResult(positionDistrict, positionVegetables)
     }
 
-    private fun addResult(positionDistrict: Int?, positionVegetables: Int?) {
+    private fun addResult(positionVegetables: Int?, positionDistrict: Int?) {
         btnAdd.setOnClickListener {
-            val amount = etAmount.text.toString().toLong()
-            val potatoBrest = tvResultPotatoBrest.text.toString().toLong()
-            val beetBrest = tvResultBeetBrest.text.toString().toLong()
-            val cabbageBrest = tvResultCabbageBrest.text.toString().toLong()
-            var resCabbageBrest = 0
-            var resPotatoBrest = 0
-            var resBeetBrest = 0
-
+            val amount = etAmount.text.toString().toInt()
+            val potatoBrest = tvResultPotatoBrest.text.toString().toInt()
+            val beetBrest = tvResultBeetBrest.text.toString().toInt()
+            val cabbageBrest = tvResultCabbageBrest.text.toString().toInt()
+            val potatoGrodno = tvResultPotatoGrodno.text.toString().toInt()
+            val beetGrodno = tvResultBeetGrodno.text.toString().toInt()
+            val cabbageGrodno = tvResultCabbageGrodno.text.toString().toInt()
+            val potatoMinsk = tvResultPotatoMinsk.text.toString().toInt()
+            val beetMinsk = tvResultBeetMinsk.text.toString().toInt()
+            val cabbageMinsk = tvResultCabbageMinsk.text.toString().toInt()
             when {
-                positionDistrict == 1 && positionVegetables == 1 -> resPotatoBrest = (amount + potatoBrest).toInt()
-                positionDistrict == 1 && positionVegetables == 2 -> resCabbageBrest = (amount + cabbageBrest).toInt()
-                positionDistrict == 1 && positionVegetables == 3 -> tvResultBeetBrest.text = (amount + beetBrest).toString()
-
+                this.positionDistrict == 0 && this.positionVegetables == 0 -> tvResultPotatoBrest.text = (amount + potatoBrest).toString()
+                this.positionDistrict == 0 && this.positionVegetables == 1 -> tvResultCabbageBrest.text = (amount + cabbageBrest).toString()
+                this.positionDistrict == 0 && this.positionVegetables == 2 -> tvResultBeetBrest.text = (amount + beetBrest).toString()
+                this.positionDistrict == 1 && this.positionVegetables == 0 -> tvResultPotatoGrodno.text = (amount + potatoGrodno).toString()
+                this.positionDistrict == 1 && this.positionVegetables == 1 -> tvResultCabbageGrodno.text = (amount + cabbageGrodno).toString()
+                this.positionDistrict == 1 && this.positionVegetables == 2 -> tvResultBeetGrodno.text = (amount + beetGrodno).toString()
+                this.positionDistrict == 2 && this.positionVegetables == 0 -> tvResultPotatoMinsk.text = (amount + potatoMinsk).toString()
+                this.positionDistrict == 2 && this.positionVegetables == 1 -> tvResultCabbageMinsk.text = (amount + cabbageMinsk).toString()
+                this.positionDistrict == 2 && this.positionVegetables == 2 -> tvResultBeetMinsk.text = (amount + beetMinsk).toString()
             }
-
-
-            tvResultCabbageBrest.text = resCabbageBrest.toString()
-            /*resCabbageBrest = (amount + cabbageBrest).toInt()
-            tvResultCabbageBrest.text = resCabbageBrest.toString()*/
-
         }
     }
 
     private fun initAdapter() {
-        //определяю что я выбрала в выпадающем списке
         val adapterDistrict = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, district)
         adapterDistrict.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerDistrict.adapter = adapterDistrict;
         spinnerDistrict.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                /* val district1 = parent!!.getItemAtPosition(position)
-                 tvDistrict.text = district1*/
-                //addResult(positionDistrict = position)
-               positionDistrict = position
+                positionDistrict = position
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
@@ -78,17 +77,12 @@ class MainActivity : AppCompatActivity() {
         spinnerVegetables.adapter = adapterVegetables;
         spinnerVegetables.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                //Toast.makeText(this@MainActivity, "Selected $position", Toast.LENGTH_LONG).show()
-                /*val Vegetables = parent!!.getItemAtPosition(position).toString()
-                tvVegetables.text = Vegetables
-                positionVegetables = position*/
-                //addResult(positionVegetables = position)
-                positionVegetables = position
+               positionVegetables = position
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
+
     }
 
     private fun initView() {
@@ -99,7 +93,11 @@ class MainActivity : AppCompatActivity() {
         tvResultPotatoBrest = findViewById(R.id.tvResultPotatoBrest)
         tvResultCabbageBrest = findViewById(R.id.tvResultCabbageBrest)
         tvResultBeetBrest = findViewById(R.id.tvResultBeetBrest)
-        tvDistrict = findViewById(R.id.tvDistrict)
-        tvVegetables = findViewById(R.id.tvVegetables)
+        tvResultPotatoGrodno = findViewById(R.id.tvResultPotatoGrodno)
+        tvResultCabbageGrodno = findViewById(R.id.tvResultCabbageGrodno)
+        tvResultBeetGrodno = findViewById(R.id.tvResultBeetGrodno)
+        tvResultPotatoMinsk = findViewById(R.id.tvResultPotatoMinsk)
+        tvResultCabbageMinsk = findViewById(R.id.tvResultCabbageMinsk)
+        tvResultBeetMinsk = findViewById(R.id.tvResultBeetMinsk)
     }
 }
