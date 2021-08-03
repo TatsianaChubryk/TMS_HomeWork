@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvDistrict: TextView
     private lateinit var tvVegetables: TextView
     var positionDistrict: Int? = null
+    var positionVegetables: Int? = null
+
 
     var district = listOf("Бресткая область", "Гродненская область", "Минская область")
     var vegetables = listOf("Картофель", "Капуста", "Свекла")
@@ -26,19 +28,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView()
         initAdapter()
-        addResult(positionDistrict)
+        addResult(positionDistrict, positionVegetables)
     }
 
-    private fun addResult(positionDistrict: Int?, position2: Int? = null) {
+    private fun addResult(positionDistrict: Int?, positionVegetables: Int?) {
         btnAdd.setOnClickListener {
+            val amount = etAmount.text.toString().toLong()
+            val potatoBrest = tvResultPotatoBrest.text.toString().toLong()
+            val beetBrest = tvResultBeetBrest.text.toString().toLong()
+            val cabbageBrest = tvResultCabbageBrest.text.toString().toLong()
+            var resCabbageBrest = 0
+            var resPotatoBrest = 0
+            var resBeetBrest = 0
+
+            when {
+                positionDistrict == 1 && positionVegetables == 1 -> resPotatoBrest = (amount + potatoBrest).toInt()
+                positionDistrict == 1 && positionVegetables == 2 -> resCabbageBrest = (amount + cabbageBrest).toInt()
+                positionDistrict == 1 && positionVegetables == 3 -> tvResultBeetBrest.text = (amount + beetBrest).toString()
+
+            }
 
 
+            tvResultCabbageBrest.text = resCabbageBrest.toString()
+            /*resCabbageBrest = (amount + cabbageBrest).toInt()
+            tvResultCabbageBrest.text = resCabbageBrest.toString()*/
 
-            /*val amount = etAmount.text.toString().toLong()
-            val resPotatoBrest = tvResultPotatoBrest.text.toString().toLong()
-            val res = amount + resPotatoBrest
-            tvResultPotatoBrest.text = res.toString()*/
-           }
+        }
     }
 
     private fun initAdapter() {
@@ -48,11 +63,12 @@ class MainActivity : AppCompatActivity() {
         spinnerDistrict.adapter = adapterDistrict;
         spinnerDistrict.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                //val district = parent!!.getItemAtPosition(position)
-                //tvDistrict.text = district
-               // addResult(positionDistrict = position)
-                positionDistrict = position
+                /* val district1 = parent!!.getItemAtPosition(position)
+                 tvDistrict.text = district1*/
+                //addResult(positionDistrict = position)
+               positionDistrict = position
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
@@ -63,9 +79,13 @@ class MainActivity : AppCompatActivity() {
         spinnerVegetables.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 //Toast.makeText(this@MainActivity, "Selected $position", Toast.LENGTH_LONG).show()
-                val Vegetables = parent!!.getItemAtPosition(position).toString()
+                /*val Vegetables = parent!!.getItemAtPosition(position).toString()
                 tvVegetables.text = Vegetables
+                positionVegetables = position*/
+                //addResult(positionVegetables = position)
+                positionVegetables = position
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
