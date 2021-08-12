@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeWork">
-        <activity android:name=".TaskSixActivity"></activity>
-        <activity android:name=".TaskFiveActivity" />
-        <activity android:name=".TaskFourActivity" />
-        <activity android:name=".TaskThreeActivity" />
-        <activity android:name=".TaskTwoActivity" />
-        <activity android:name=".TaskOneActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".hw.homework.lesson.TaskSixActivity"></activity>
+        <activity android:name=".hw.homework.lesson.TaskFiveActivity" />
+        <activity android:name=".hw.homework.lesson.TaskFourActivity" />
+        <activity android:name=".hw.homework.lesson.TaskThreeActivity" />
+        <activity android:name=".hw.homework.lesson.TaskTwoActivity" />
+        <activity android:name=".hw.homework.lesson.TaskOneActivity" />
+        <activity android:name=".hw.homework.lesson22.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,11 +1,11 @@
-package com.example.homework
+package com.example.homework.hw.homework.lesson
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import java.math.BigInteger
+import com.example.homework.R
 
 /*
 Написать функцию, которая возвращает факториал числа N (n! = 1*2*…*n-1*n;)

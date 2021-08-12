@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HomeWork16</string>
+    <string name="app_name">HomeWork</string>
     <string name="btn_taskOne">Task 1</string>
     <string name="btn_taskTwo">Task 2</string>
     <string name="btn_taskThree">Task 3</string>
@@ -18,4 +18,8 @@
     <string name="btn_check">Можно ли вложить один конверт в другой?</string>
     <string name="et_number">Введите число</string>
     <string name="btn_res">Вычислить факториал</string>
+    <string name="label">Label</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="authorization">Authorization</string>
 </resources>

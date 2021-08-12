@@ -8,7 +8,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.homework"
+        applicationId "com.example.com.example.homework.hw.homework"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
@@ -30,6 +30,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+
 }
 
 dependencies {

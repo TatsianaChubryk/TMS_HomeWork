@@ -1,10 +1,11 @@
-package com.example.homework
+package com.example.homework.hw.homework.lesson
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.homework.R
 
 /*
 Если а – четное посчитать а*б, иначе а+б используя when

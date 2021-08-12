@@ -1,8 +1,9 @@
-package com.example.homework
+package com.example.homework.hw.homework.lesson
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.homework.R
 
 /*
 Найти сумму четных чисел и их количество в диапазоне от 1 до 99
