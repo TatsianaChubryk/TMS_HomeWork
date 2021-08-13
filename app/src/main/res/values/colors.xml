@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="btnAutho">#FF874936</color>
+    <color name="trackColor">#FFF4FB</color>
+    <color name="thumbColor">#9D9DE6</color>
 </resources>
