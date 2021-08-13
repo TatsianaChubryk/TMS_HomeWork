@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeWork">
-        <activity android:name=".hw.homework.lesson22.LoginFragment"></activity>
-        <activity android:name=".hw.homework.lesson22.MainActivity">
+        <activity android:name=".hw.homework.lesson22.TaskFragment"></activity>
+        <activity android:name=".hw.homework.lesson21.MediaPlayerFragment" />
+        <activity android:name=".hw.homework.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
