@@ -23,5 +23,6 @@
     <string name="password">Password</string>
     <string name="authorization">Authorization</string>
     <string name="errorAutho">Введите логин и/или пароль</string>
+    <string name="mediaplayer">MediaPlayer</string>
 
 </resources>

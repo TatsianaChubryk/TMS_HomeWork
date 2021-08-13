@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.homework.R
 import com.example.homework.databinding.TaskFragmentBinding
+import com.example.homework.hw.homework.lesson21.MediaPlayerFragment
 
 class TaskFragment : Fragment(), View.OnClickListener {
 
@@ -23,11 +25,24 @@ class TaskFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
-        //binding?.btn?.setOnClickListener(this)
+        binding?.btnLesson22?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        activity?.let{
+            val fragment = when (v) {
+                binding?.btnLesson22 -> MediaPlayerFragment()
+                else -> null
+            }
+
+            fragment?.let { frag ->
+                it.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame, frag)
+                    .addToBackStack(frag::class.java.canonicalName)
+                    .commit()
+            }
+        }
     }
 
     override fun onDestroy() {

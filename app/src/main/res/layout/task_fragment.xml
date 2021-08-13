@@ -6,4 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".hw.homework.lesson22.TaskFragment">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLesson22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/mediaplayer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.button.MaterialButton>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,10 @@
 package com.example.homework.hw.homework.lesson21
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.homework.R
-import com.example.homework.databinding.LoginFragmentBinding
 import com.example.homework.databinding.MediaPlayerFragmentBinding
 
 class MediaPlayerFragment : Fragment(), View.OnClickListener {
@@ -26,7 +23,7 @@ class MediaPlayerFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
-        binding?.btn?.setOnClickListener(this)
+        //binding?.btn?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {

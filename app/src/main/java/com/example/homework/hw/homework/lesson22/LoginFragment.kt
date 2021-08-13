@@ -12,7 +12,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     private var _binding: LoginFragmentBinding? = null
     private val binding get() = _binding
-    private var loginError = binding?.tfLogin
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -34,11 +33,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     override fun onClick(v: View?) {
         activity?.let {
 
@@ -55,5 +49,10 @@ class LoginFragment : Fragment(), View.OnClickListener {
                         .commit()
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
