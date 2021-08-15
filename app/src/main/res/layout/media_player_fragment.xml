@@ -31,7 +31,8 @@
                 android:id="@+id/seekbar"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:theme="@style/SeekBarColor"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -45,7 +46,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/ic_play_media" />
+                    android:src="@drawable/ic_play_media"
+                    android:backgroundTint="@color/purple_500"
+                    app:tint="@color/white"
+                    app:rippleColor="@color/white"/>
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnPause"
@@ -53,7 +57,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:clickable="true"
-                    android:src="@drawable/ic_pause_media" />
+                    android:src="@drawable/ic_pause_media"
+                    android:backgroundTint="@color/purple_500"
+                    app:tint="@color/white"
+                    app:rippleColor="@color/white"/>
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnStop"
@@ -61,7 +68,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:clickable="true"
-                    android:src="@drawable/ic_stop_media" />
+                    android:src="@drawable/ic_stop_media"
+                    android:backgroundTint="@color/purple_500"
+                    app:tint="@color/white"
+                    app:rippleColor="@color/white"/>
 
             </LinearLayout>
         </LinearLayout>

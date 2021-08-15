@@ -31,6 +31,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 binding?.tfPass?.error = getString(R.string.errorAutho)
             } else onClick(it)
         }
+
     }
 
     override fun onClick(v: View?) {
