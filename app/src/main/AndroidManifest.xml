@@ -9,13 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeWork">
-        <activity android:name=".TaskSixActivity"></activity>
-        <activity android:name=".TaskFiveActivity" />
-        <activity android:name=".TaskFourActivity" />
-        <activity android:name=".TaskThreeActivity" />
-        <activity android:name=".TaskTwoActivity" />
-        <activity android:name=".TaskOneActivity" />
-        <activity android:name=".MainActivity">
+
+        <service
+            android:name=".hw.homework.lesson21.MediaPlayerService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".hw.homework.lesson22.TaskFragment"></activity>
+        <activity android:name=".hw.homework.lesson21.MediaPlayerFragment" />
+
+        <activity android:name=".hw.homework.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

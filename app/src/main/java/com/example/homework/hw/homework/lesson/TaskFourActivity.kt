@@ -1,10 +1,11 @@
-package com.example.homework
+package com.example.homework.hw.homework.lesson
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.homework.R
 
 /*
 Есть два конверта со сторонами (а,б) и (в,г) определить, можно ли один конверт вложить в другой
