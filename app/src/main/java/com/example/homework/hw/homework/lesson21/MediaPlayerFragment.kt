@@ -1,90 +1,103 @@
 package com.example.homework.hw.homework.lesson21
 
-import android.media.MediaPlayer
+import android.content.ComponentName
+import android.content.Context.BIND_AUTO_CREATE
+import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
+import android.os.IBinder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.Fragment
-import com.example.homework.R
 import com.example.homework.databinding.MediaPlayerFragmentBinding
 import java.lang.Exception
 
-class MediaPlayerFragment : Fragment(), View.OnClickListener {
+class MediaPlayerFragment : Fragment() {
 
     private var _binding: MediaPlayerFragmentBinding? = null
     private val binding get() = _binding
-    private var mp: MediaPlayer? = null
-    private var currentSong: MutableList<Int> = mutableListOf(R.raw.music)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = MediaPlayerFragmentBinding.inflate(inflater, container, false)
-        return binding?.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding?.btnPlay?.setOnClickListener(this)
-        soundControl(currentSong[0])
-    }
-
-    private fun soundControl(id: Int) {
-        binding?.btnPlay?.setOnClickListener {
-            if (mp == null) {
-                mp = MediaPlayer.create(context, id)
-
-                initSeekBar()
-            }
-            mp?.start()
+    private val connection = object : ServiceConnection {
+        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+            isBinded = true
+            val binder = service as MediaPlayerService.LocalBinder
+            myService = binder.getAudioPlayerServiceInstance()
         }
 
-        binding?.btnPause?.setOnClickListener {
-            if (mp != null) {
-                mp?.pause()
-            }
+        override fun onServiceDisconnected(name: ComponentName?) {
+            isBinded = false
+            myService = null
         }
-
-        binding?.btnStop?.setOnClickListener {
-            if (mp != null) {
-                mp?.stop()
-                mp?.reset()
-                mp?.release()
-                mp = null
-            }
-        }
-
-        binding?.seekbar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser) mp?.seekTo(progress)
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-            }
-
-        })
     }
+
+        var isBinded: Boolean = false
+        var myService: MediaPlayerService? = null
+
+        override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            _binding = MediaPlayerFragmentBinding.inflate(inflater, container, false)
+            return binding?.root
+        }
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+            val intent = Intent(context, MediaPlayerService::class.java)
+            activity?.bindService(intent, connection, BIND_AUTO_CREATE)
+
+            binding?.btnPlay?.setOnClickListener {
+                if (isBinded) {
+                    myService?.playMusic()
+                    initSeekBar()
+                }
+            }
+
+            binding?.btnPause?.setOnClickListener {
+                if (isBinded) {
+                    myService?.pauseMusic()
+                }
+            }
+
+            binding?.btnStop?.setOnClickListener {
+                if (isBinded) {
+                    myService?.stopMusic()
+                }
+            }
+            binding?.seekbar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+                override fun onProgressChanged(
+                    seekBar: SeekBar?,
+                    progress: Int,
+                    fromUser: Boolean
+                ) {
+                    if (fromUser) myService?.mp?.seekTo(progress)
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+                }
+
+                override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                }
+            })
+
+         }
 
     private fun initSeekBar() {
-        binding?.seekbar?.max = mp!!.duration
+        binding?.seekbar?.max = myService?.mp!!.duration
 
         val handler = Handler()
         handler.postDelayed(object : Runnable {
             override fun run() {
                 try {
-                    binding?.seekbar?.progress = mp!!.currentPosition
-                    handler.postDelayed(this, 1000)
+                    binding?.seekbar?.progress = myService?.mp!!.currentPosition
+                    handler.postDelayed(this,1000)
                 } catch (e: Exception) {
                     binding?.seekbar?.progress = 0
                 }
@@ -92,12 +105,12 @@ class MediaPlayerFragment : Fragment(), View.OnClickListener {
         }, 0)
     }
 
-    override fun onClick(v: View?) {
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
+      override fun onDestroy() {
+          super.onDestroy()
+          _binding = null
+           if (isBinded) {
+               activity?.unbindService(connection)
+               isBinded = false
+           }
+      }
 }
