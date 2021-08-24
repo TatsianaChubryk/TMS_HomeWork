@@ -24,5 +24,8 @@
     <string name="authorization">Authorization</string>
     <string name="errorAutho">Введите логин и/или пароль</string>
     <string name="mediaplayer">MediaPlayer</string>
+    <string name="student_name">Student name</string>
+    <string name="student_mark">mark</string>
+    <string name="btnLesson23">lesson 23</string>
 
 </resources>
