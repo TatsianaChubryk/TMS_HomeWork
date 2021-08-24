@@ -15,8 +15,9 @@
             android:enabled="true"
             android:exported="true"></service>
 
-        <activity android:name=".hw.homework.lesson22.TaskFragment"></activity>
+        <activity android:name=".hw.homework.lesson22.TaskFragment"/>
         <activity android:name=".hw.homework.lesson21.MediaPlayerFragment" />
+        <activity android:name=".hw.homework.lesson24.ViewAnimationFragment"/>
 
         <activity android:name=".hw.homework.MainActivity">
             <intent-filter>

@@ -24,5 +24,12 @@
     <string name="authorization">Authorization</string>
     <string name="errorAutho">Введите логин и/или пароль</string>
     <string name="mediaplayer">MediaPlayer</string>
+    <string name="btn_lesson23">Lesson 23</string>
+    <string name="btn_lesson24">Lesson 24</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="some_text">some text</string>
+    <string name="start_anim">start anim</string>
+    <string name="stop_anim">stop anim text</string>
 
 </resources>
