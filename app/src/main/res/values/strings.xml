@@ -6,6 +6,7 @@
     <string name="btn_taskFour">Task 4</string>
     <string name="btn_taskFive">Task 5</string>
     <string name="btn_taskSix">Task 6</string>
+    <string name="btn_taskSeven">Task 7</string>
     <string name="btn_result">=</string>
     <string name="et_rating">Введите рейтинг</string>
     <string name="btn_rating">Узнать рейтинг</string>
@@ -28,5 +29,6 @@
     <string name="start_anim">start anim</string>
     <string name="stop_anim">stop anim text</string>
     <string name="btnLesson24">lesson 24</string>
+    <string name="btnLesson25">lesson 25</string>
 
 </resources>
