@@ -28,5 +28,8 @@
     <string name="start_anim">start anim</string>
     <string name="stop_anim">stop anim text</string>
     <string name="btnLesson24">lesson 24</string>
+    <string name="student_name">Student name</string>
+    <string name="student_mark">mark</string>
+    <string name="btnLesson23">lesson 23</string>
 
 </resources>

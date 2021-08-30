@@ -1,8 +1,6 @@
 package com.example.homework.hw.homework.lesson22
 
 import android.os.Bundle
-import android.text.TextUtils
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +9,7 @@ import androidx.fragment.app.commit
 import com.example.homework.R
 import com.example.homework.databinding.TaskFragmentBinding
 import com.example.homework.hw.homework.lesson21.MediaPlayerFragment
+import com.example.homework.hw.homework.lesson23.StudentListFragment
 import com.example.homework.hw.homework.lesson24.AnimationFragment
 
 class TaskFragment : Fragment(), View.OnClickListener {
@@ -27,16 +26,18 @@ class TaskFragment : Fragment(), View.OnClickListener {
         return binding?.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.btnLesson22?.setOnClickListener(this)
+        binding?.btnLesson23?.setOnClickListener(this)
         binding?.btnLesson24?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        activity?.let{
+        activity?.let {
             val fragment = when (v) {
                 binding?.btnLesson22 -> MediaPlayerFragment()
+                binding?.btnLesson23 -> StudentListFragment()
                 binding?.btnLesson24 -> AnimationFragment()
                 else -> null
             }
