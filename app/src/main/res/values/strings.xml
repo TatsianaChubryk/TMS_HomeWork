@@ -30,5 +30,9 @@
     <string name="stop_anim">stop anim text</string>
     <string name="btnLesson24">lesson 24</string>
     <string name="btnLesson25">lesson 25</string>
-
+    <string name="btnLesson26">lesson 26</string>
+    <string name="open_patients">Open patients</string>
+    <string name="empty_not_saved">empty</string>
+    <string name="patients">Patients</string>
+    <string name="save">save</string>
 </resources>
