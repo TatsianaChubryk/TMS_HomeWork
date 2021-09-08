@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".hw.homework.lesson27.LipstickFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollForCocktail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/lipstickImage"
+                android:layout_marginTop="10dp"
+                android:layout_width="260dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                tools:src="@drawable/lipstick" />
+
+            <TextView
+                android:id="@+id/lipstickBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:hint="@string/brand"/>
+
+            <TextView
+                android:id="@+id/lipstickName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:hint="@string/name"/>
+
+            <TextView
+                android:id="@+id/lipstickPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:hint="@string/price"/>
+
+            <TextView
+                android:id="@+id/lipstickDescription"
+                android:layout_width="match_parent"
+                android:layout_height="238dp"
+                android:layout_margin="10dp"
+                android:hint="@string/description"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

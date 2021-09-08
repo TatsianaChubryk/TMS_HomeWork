@@ -11,6 +11,7 @@ import com.example.homework.databinding.TaskFragmentBinding
 import com.example.homework.hw.homework.lesson21.MediaPlayerFragment
 import com.example.homework.hw.homework.lesson23.StudentListFragment
 import com.example.homework.hw.homework.lesson24.AnimationFragment
+import com.example.homework.hw.homework.lesson27.LipstickListFragment
 
 class TaskFragment : Fragment(), View.OnClickListener {
 
@@ -31,6 +32,7 @@ class TaskFragment : Fragment(), View.OnClickListener {
         binding?.btnLesson22?.setOnClickListener(this)
         binding?.btnLesson23?.setOnClickListener(this)
         binding?.btnLesson24?.setOnClickListener(this)
+        binding?.btnLesson27?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -39,6 +41,7 @@ class TaskFragment : Fragment(), View.OnClickListener {
                 binding?.btnLesson22 -> MediaPlayerFragment()
                 binding?.btnLesson23 -> StudentListFragment()
                 binding?.btnLesson24 -> AnimationFragment()
+                binding?.btnLesson27 -> LipstickListFragment()
                 else -> null
             }
 
