@@ -31,5 +31,9 @@
     <string name="student_name">Student name</string>
     <string name="student_mark">mark</string>
     <string name="btnLesson23">lesson 23</string>
-
+    <string name="btnLesson27">lesson 27</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="name">Name</string>
+    <string name="brand">Brand</string>
 </resources>
