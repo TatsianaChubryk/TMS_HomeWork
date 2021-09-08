@@ -35,4 +35,8 @@
     <string name="empty_not_saved">empty</string>
     <string name="patients">Patients</string>
     <string name="save">save</string>
+    <string name="student_name">Student name</string>
+    <string name="student_mark">mark</string>
+    <string name="btnLesson23">lesson 23</string>
+
 </resources>

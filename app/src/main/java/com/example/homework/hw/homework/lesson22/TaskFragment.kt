@@ -10,6 +10,7 @@ import androidx.fragment.app.commit
 import com.example.homework.R
 import com.example.homework.databinding.TaskFragmentBinding
 import com.example.homework.hw.homework.lesson21.MediaPlayerFragment
+import com.example.homework.hw.homework.lesson23.StudentListFragment
 import com.example.homework.hw.homework.lesson24.AnimationFragment
 import com.example.homework.hw.homework.lesson25.CoroutinesFragment
 import com.example.homework.hw.homework.lesson26.PatientsActivity
@@ -28,9 +29,10 @@ class TaskFragment : Fragment(), View.OnClickListener {
         return binding?.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.btnLesson22?.setOnClickListener(this)
+        binding?.btnLesson23?.setOnClickListener(this)
         binding?.btnLesson24?.setOnClickListener(this)
         binding?.btnLesson25?.setOnClickListener(this)
         binding?.btnLesson26?.setOnClickListener {
@@ -39,9 +41,10 @@ class TaskFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        activity?.let{
+        activity?.let {
             val fragment = when (v) {
                 binding?.btnLesson22 -> MediaPlayerFragment()
+                binding?.btnLesson23 -> StudentListFragment()
                 binding?.btnLesson24 -> AnimationFragment()
                 binding?.btnLesson25 -> CoroutinesFragment()
                 else -> null
