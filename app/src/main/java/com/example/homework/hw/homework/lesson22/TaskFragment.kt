@@ -1,5 +1,6 @@
 package com.example.homework.hw.homework.lesson22
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import com.example.homework.databinding.TaskFragmentBinding
 import com.example.homework.hw.homework.lesson21.MediaPlayerFragment
 import com.example.homework.hw.homework.lesson23.StudentListFragment
 import com.example.homework.hw.homework.lesson24.AnimationFragment
+import com.example.homework.hw.homework.lesson25.CoroutinesFragment
+import com.example.homework.hw.homework.lesson26.PatientsActivity
 
 class TaskFragment : Fragment(), View.OnClickListener {
 
@@ -31,6 +34,10 @@ class TaskFragment : Fragment(), View.OnClickListener {
         binding?.btnLesson22?.setOnClickListener(this)
         binding?.btnLesson23?.setOnClickListener(this)
         binding?.btnLesson24?.setOnClickListener(this)
+        binding?.btnLesson25?.setOnClickListener(this)
+        binding?.btnLesson26?.setOnClickListener {
+            startActivity(Intent(activity, PatientsActivity::class.java))
+        }
     }
 
     override fun onClick(v: View?) {
@@ -39,6 +46,7 @@ class TaskFragment : Fragment(), View.OnClickListener {
                 binding?.btnLesson22 -> MediaPlayerFragment()
                 binding?.btnLesson23 -> StudentListFragment()
                 binding?.btnLesson24 -> AnimationFragment()
+                binding?.btnLesson25 -> CoroutinesFragment()
                 else -> null
             }
 
